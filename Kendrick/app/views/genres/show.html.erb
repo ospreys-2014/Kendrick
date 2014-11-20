@@ -1,0 +1,6 @@
+<!-- Display the genres... would like to display in a pretty grid format -->
+<% @genres.each do |genre| %>
+  <li>
+    <%= link_to "#{genre.name}", genre %>
+  </li>
+<% end %>
