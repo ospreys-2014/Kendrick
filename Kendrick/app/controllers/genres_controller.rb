@@ -1,4 +1,4 @@
-class GenresController < ApplicationController
+class GenreController < ApplicationController
 
   def show
     @genres = Genre.all
