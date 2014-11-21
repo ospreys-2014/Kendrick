@@ -16,12 +16,29 @@
     <%= f.text_field :username %>
   </div>
   <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :email_address %><br />
+    <%= f.text_field :email_address %>
+  </div>
+  <div class="field">
     <%= f.label :password %><br />
     <%= f.text_field :password %>
   </div>
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.text_field :password_confirmation %>
+  </div>
+  <!-- Are you an artist? -->
+  <div class="field">
+    <%= check_box_tag(:artist) %>
+    <%= label_tag(:artist, "I am an Artist") %>
   </div>
   <div class="actions">
     <%= f.submit "Sign up" %>
