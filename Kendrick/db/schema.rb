@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20141120224248) do
     t.integer  "reviewer_id"
     t.integer  "commenter_id"
     t.integer  "review_id"
+    t.integer  "artist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

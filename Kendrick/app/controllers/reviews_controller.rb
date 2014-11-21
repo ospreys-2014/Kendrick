@@ -1,5 +1,9 @@
 class ReviewsController < ApplicationController
 
+  def index
+    @reviews = Review.where(artist: current_user.id)
+  end
+
   def show
     @review = Review.find(params[:id])
   end
@@ -13,6 +17,8 @@ class ReviewsController < ApplicationController
     @review.save
     redirect_to @review
   end
+
+
 
   private
     def review_params
