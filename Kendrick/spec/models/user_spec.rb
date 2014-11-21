@@ -42,9 +42,8 @@ describe User do
     expect(user.full_name).to eq("#{user.first_name} #{user.last_name}")
   end
 
-  it "should have many teams" do
-    t = User.reflect_on_association(:genres)
-    t.macro.should == :has_many
-  end
+
+  it { should have_many(:genres) }
+
 end
 
