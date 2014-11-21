@@ -7,7 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <ul>
+    <a href="#"><li>Home</li></a>
+    <a href="#"><li>Signup</li></a>
+    <a href="#"><li>Login</li></a>
+    <!-- Renders logout if there is a session -->
+    <% if session[:user_id] %>
+      <a href="#"><li>Logout</li></a>
+    <% end %>
+  </ul>
 <%= yield %>
 
 </body>
