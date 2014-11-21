@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.where(artist: current_user.id)
+    @reviews = Review.where(artist: @user.artist)
   end
 
   def show
