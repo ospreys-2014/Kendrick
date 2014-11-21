@@ -2,7 +2,7 @@ require'rails_helper'
 
 describe User do
 
-  
+
   it "is invalid without a firstname"
   it "is invalid without a lastname"
   it "is invalid without an email address"
@@ -53,7 +53,7 @@ describe User do
     expect(user).to be_invalid
   end
 
-  it "is invalid if no password given" do
+  it "is invalid if no lastname given" do
     user = FactoryGirl.build(:invalid_last_name)
     # user = User.new(
     #   username: 'hubba_bubba',
@@ -64,7 +64,7 @@ describe User do
     expect(user).to be_invalid
   end
 
-  it "is invalid if no password given" do
+  it "is invalid if no email given" do
     user = FactoryGirl.build(:invalid_email_address)
     # user = User.new(
     #   username: 'hubba_bubba',
