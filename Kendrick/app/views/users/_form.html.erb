@@ -37,12 +37,12 @@
   </div>
   <!-- Are you an artist? -->
   <div class="field check-box">
-    <%= check_box_tag(:artist) %>
-    <%= label_tag(:artist, "I am an Artist") %>
+    <%= f.check_box(:artist) %>
+    <%= f.label(:artist, "I am an Artist") %>
   </div>
   <div class="field artist-form" style="display:none;">
     <%= f.label :bio %><br />
-    <%= f.text_field :bio %>
+    <%= f.text_area :bio %>
   </div>
   <div class="field artist-form" style="display:none;">
     <%= f.label :soundcloud_profile %><br />

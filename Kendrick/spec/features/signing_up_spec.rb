@@ -8,6 +8,7 @@ feature 'Signing up' do
    fill_in "username", with: "Jobin"
    fill_in "password", with: "password"
    fill_in "password confirmation", with: "password"
+   fill_in "email address", with: "123@gmail.com"
    click_button "Sign up"
    expect(page).to have_content("You have signed up successfully.")
   end
