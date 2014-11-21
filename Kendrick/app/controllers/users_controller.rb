@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(user_params)
   end
 
   def new
@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      session[:user_id] = @user.id
       flash[:notice] = "You have signed up successfully."
       redirect_to genres_path
     else
