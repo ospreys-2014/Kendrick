@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users
   resources :genres
   resources :artists
+  resources :reviews
 
   # Example of regular route:
   get 'signup' => 'auth#view'
