@@ -36,9 +36,17 @@
     <%= f.text_field :password_confirmation %>
   </div>
   <!-- Are you an artist? -->
-  <div class="field">
+  <div class="field check-box">
     <%= check_box_tag(:artist) %>
     <%= label_tag(:artist, "I am an Artist") %>
+  </div>
+  <div class="field artist-form" style="display:none;">
+    <%= f.label :bio %><br />
+    <%= f.text_field :bio %>
+  </div>
+  <div class="field artist-form" style="display:none;">
+    <%= f.label :soundcloud_profile %><br />
+    <%= f.text_field :soundcloud_profile %>
   </div>
   <div class="actions">
     <%= f.submit "Sign up" %>
