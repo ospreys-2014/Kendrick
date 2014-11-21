@@ -6,8 +6,9 @@ class GenresController < ApplicationController
   end
 
   def show
-    @users = User.where(genre_id: params[:id])
-    render 'show_genre'
+    genre = Genre.find(params[:id])
+    @users = genre.artists
+    render 'show_genre', layout: false
   end
 
 end
