@@ -9,12 +9,15 @@ Rails.application.routes.draw do
   resources :artists
   resources :reviews
 
+  get 'logout' => 'sessions#destroy'
+  get 'login' => 'sessions#login'
+
   # Example of regular route:
   # get 'signup' => 'auth#view'
-  get 'login' => 'sessions#create'
+  # get 'login' => 'sessions#create'
   # post 'login' => 'sessions#create'
 
-  post 'logout' => 'sessions#destroy'
+  # post 'logout' => 'sessions#destroy'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
