@@ -44,6 +44,7 @@ describe User do
 
 
   it { should have_many(:genres) }
+  it { should have_many(:reviews) }
 
 end
 
