@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.where(artist: @user.artist)
+    @reviews = Review.where(artist: user.id)
   end
 
   def show
@@ -14,6 +14,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    @review.artist = User.find(params[:review][:artist_id])
     @review.save
     redirect_to @review
   end
