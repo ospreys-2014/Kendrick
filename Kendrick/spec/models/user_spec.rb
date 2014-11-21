@@ -2,10 +2,6 @@ require'rails_helper'
 
 describe User do
 
-  
-  it "is invalid without a firstname"
-  it "is invalid without a lastname"
-  it "is invalid without an email address"
   it "is invalid with a duplicate email address"
   it "returns a contact's full name as a string"
 
@@ -38,6 +34,11 @@ describe User do
   it "is invalid if no email address given" do
     user = FactoryGirl.build(:invalid_email_address)
     expect(user).to be_invalid
+  end
+
+    it "returns a contact's full name as a string" do
+    user = FactoryGirl.build(:user)
+    expect(user.full_name).to eq("#{user.first_name} #{user.last_name}")
   end
 
 end
