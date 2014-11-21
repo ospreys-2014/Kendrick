@@ -10,8 +10,11 @@
 </ul>
 </div>
 
-<div id="user-review">
-  <%= render "reviews/form", locals: {review: Review.new} %>
+<div id="user-review-box">
+  <%= render "reviews/form", locals: {review: Review.new, user: @user} %>
 </div>
 
+<div id="reviews-display">
+  <%= render "reviews/index", locals: {user: @user} %>
+</div>
 

@@ -1,0 +1,7 @@
+
+<% @user.reviews.each do |review| %>
+  <div id="<%= "#{review.id}" %>">
+    <%= review.body %>
+  </div>
+<% end %>
+

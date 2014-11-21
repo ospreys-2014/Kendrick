@@ -9,3 +9,7 @@ require 'faker'
 5.times do
 User.create(username: Faker::Name.name, password: "123", first_name: "Steph", last_name: "Reaves", email_address: "me@me.com", bio: "enjoys long walks on beaches", soundcloud_profile: "soundcloud.com", artist: true )
 end
+
+5.times do
+Review.create(body: Faker::Lorem.sentence, artist: User.all.sample)
+end
