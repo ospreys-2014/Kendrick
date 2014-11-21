@@ -2,7 +2,7 @@ require'rails_helper'
 
 describe User do
 
-  it "is valid with a username, password, first_name, last_name, and email_address" do
+  it "is valid with a username, password, first_name, last_name, email_address, and soundcloud profile" do
     user = FactoryGirl.build(:user)
     expect(user).to be_valid
   end
@@ -29,6 +29,11 @@ describe User do
 
   it "is invalid if no email address given" do
     user = FactoryGirl.build(:invalid_email_address)
+    expect(user).to be_invalid
+  end
+
+  it "is invalid if url is not from soundcloud" do
+    user = FactoryGirl.build(:invalid_soundcloud_profile)
     expect(user).to be_invalid
   end
 

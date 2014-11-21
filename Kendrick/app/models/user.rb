@@ -5,7 +5,9 @@ class User < ActiveRecord::Base
   validates :password, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :soundcloud_profile, format: { with: /https:\/\/soundcloud\.com\/.*?/ix }
   validates :email_address, presence: true
+  validates_format_of :email_address, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 
   has_many  :ratings
   has_many  :reviews, foreign_key: :reviewer_id
