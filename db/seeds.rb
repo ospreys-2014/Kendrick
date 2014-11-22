@@ -10,10 +10,10 @@ require 'faker'
 # 5.times do
 #   User.create(username: Faker::Name.name, password: "123", first_name: Faker::Name.name, last_name: Faker::Name.name, email_address: "me@me.com", bio: Faker::Lorem.sentence, soundcloud_profile: "soundcloud.com", artist: true )
 # end
-User.create(username: "HerpaTwerk", password: "123", first_name: "Herpz", last_name: "Merpz", email_address: "me@me.com", bio: "I play the cow-bell for quinceaneras :)", soundcloud_profile: "soundcloud.com/cow-bella", artist: true)
-User.create(username: "MurkaZurk", password: "123", first_name: "Jim", last_name: "Brown", email_address: "me@me.com", bio: "Host me at your birthday parties!", soundcloud_profile: "soundcloud.com", artist: true)
+User.create(username: "HerpaTwerk", password: "123", first_name: "Herpz", last_name: "Merpz", email_address: "me@me.com", bio: "I play the cow-bell for quinceaneras :)", soundcloud_profile: "https://soundcloud.com/user211340458", artist: true)
+User.create(username: "MurkaZurk", password: "123", first_name: "Jim", last_name: "Brown", email_address: "me@me.com", bio: "Host me at your birthday parties!", soundcloud_profile: "https://soundcloud.com/user211340458", artist: true)
 User.create(username: "Mookz", password: "123", first_name: "Mookie", last_name: "Thompson", email_address: "me@me.com", bio: Faker::Lorem.sentence, soundcloud_profile: "soundcloud.com", artist: true)
-User.create(username: "DOM Sinatra", password: "123", first_name: "Kobe", last_name: "Bryant", email_address: "me@me.com", bio: Faker::Lorem.sentence, soundcloud_profile: "soundcloud.com", artist: true)
+User.create(username: "DOM Sinatra", password: "123", first_name: "Kobe", last_name: "Bryant", email_address: "me@me.com", bio: Faker::Lorem.sentence, soundcloud_profile: "https://soundcloud.com/user211340458", artist: true)
 
 Genre.create(name:"Jazz")
 Genre.create(name:"Hip-Hop")

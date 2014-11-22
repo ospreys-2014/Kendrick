@@ -37,6 +37,11 @@ describe User do
     expect(user).to be_invalid
   end
 
+  it "is valid if soundcloud profile is nil" do
+    user = FactoryGirl.build(:nil_soundcloud_profile)
+    expect(user).to be_valid
+  end
+
   it "returns a contact's full name as a string" do
     user = FactoryGirl.build(:user)
     expect(user.full_name).to eq("#{user.first_name} #{user.last_name}")
@@ -44,7 +49,7 @@ describe User do
 
 
   it { should have_many(:genres) }
-  it { should have_many(:reviews) }
+  it { should have_many(:reviews_as_reviewer) }
 
 end
 

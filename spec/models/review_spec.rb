@@ -16,12 +16,17 @@ describe Review do
   end
 
   it "is invalid without referencing an artist" do
-    review = FactoryGirl.create(:review, reviewer: user)
+    user = FactoryGirl.build(:user)
+    artist = FactoryGirl.build(:user)
+    review = FactoryGirl.create(:reviews_as_reviewer, reviewer: user)
+    p review
     expect(review).to be_invalid
   end
 
   it "is invalid without referencing a reviewer" do
-    review = FactoryGirl.create(:review, artist: artist)
+    user = FactoryGirl.build(:user)
+    artist = FactoryGirl.build(:user)
+    review = FactoryGirl.create(:reviews_as_reviewer, artist: artist)
     expect(review).to be_invalid
   end
 
