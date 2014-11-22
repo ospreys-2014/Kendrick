@@ -6,4 +6,5 @@ FactoryGirl.define do
     factory :invalid_genre do
       name nil
     end
+  end
 end
