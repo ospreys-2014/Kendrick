@@ -7,5 +7,6 @@ FactoryGirl.define do
     factory :invalid_body do
       body nil
     end
+
   end
 end
