@@ -46,9 +46,10 @@ ActiveRecord::Schema.define(version: 20141122194806) do
   end
 
   create_table "reviews", force: true do |t|
-    t.integer  "reviewer_id"
     t.text     "body"
-    t.integer  "artist_id"
+    t.integer  "reviewer_id"
+    t.integer  "commenter_id"
+    t.integer  "review_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
