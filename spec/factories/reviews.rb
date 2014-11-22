@@ -8,5 +8,9 @@ FactoryGirl.define do
       body nil
     end
 
+    factory :invalid_reviewer do
+      reviewer nil
+    end
+
   end
 end
