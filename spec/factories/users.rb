@@ -35,6 +35,10 @@ FactoryGirl.define do
       soundcloud_profile nil
     end
 
+    factory :blank_soundcloud_profile do
+      soundcloud_profile ""
+    end
+
     # after(:build) do |user|
     #   user.genres << FactoryGirl.build(:genre,
     #     genre: genre, artist: user)

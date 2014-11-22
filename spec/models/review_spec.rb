@@ -11,22 +11,19 @@ describe Review do
   end
 
   it "is invalid without a body given" do
-    review = FactoryGirl.build(:invalid_body)
+    review = FactoryGirl.build(:invalid_review_body)
     expect(review).to be_invalid
   end
 
   it "is invalid without referencing an artist" do
-    user = FactoryGirl.build(:user)
-    artist = FactoryGirl.build(:user)
-    review = FactoryGirl.create(:reviews_as_reviewer, reviewer: user)
-    p review
+    user = FactoryGirl.create(:user)
+    review = user.reviews_as_reviewer.create(body: "test")
+
     expect(review).to be_invalid
   end
 
   it "is invalid without referencing a reviewer" do
-    user = FactoryGirl.build(:user)
-    artist = FactoryGirl.build(:user)
-    review = FactoryGirl.create(:reviews_as_reviewer, artist: artist)
+    review = FactoryGirl.build(:invalid_reviewer)
     expect(review).to be_invalid
   end
 
