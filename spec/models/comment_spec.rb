@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-describe Review do
+describe Comment do
 
-  it "is valid with a reviewer, artist being reviewed, and body given" do
+  it "is valid with a commenter, review it is commenting, and body given" do
     user = FactoryGirl.build(:user)
-    artist = FactoryGirl.build(:user)
-    review = FactoryGirl.create(:review, artist: artist, reviewer: user)
+    review = FactoryGirl.build(:reviews_as_reviewer)
+    coment = FactoryGirl.create(:comment, review: review, commenter: user)
 
     expect(review).to be_valid
   end
 
   it "is invalid without a body given" do
-    review = FactoryGirl.build(:invalid_review_body)
+    review = FactoryGirl.build(:invalid_comment_body)
     expect(review).to be_invalid
   end
 
