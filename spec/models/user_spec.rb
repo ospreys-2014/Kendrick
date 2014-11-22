@@ -42,6 +42,11 @@ describe User do
     expect(user).to be_valid
   end
 
+  it "is valid if soundcloud profile is blank" do
+    user = FactoryGirl.build(:blank_soundcloud_profile)
+    expect(user).to be_valid
+  end
+
   it "returns a contact's full name as a string" do
     user = FactoryGirl.build(:user)
     expect(user.full_name).to eq("#{user.first_name} #{user.last_name}")
