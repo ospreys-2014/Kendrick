@@ -1,3 +1,5 @@
+<img src="https://travis-ci.org/ospreys-2014/Kendrick.svg?branch=master">
+
 Kendrick
 ========
 Weekend:
