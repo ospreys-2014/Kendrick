@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kendrick</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <ul>
+    <!-- Renders logout if there is a session -->
+    <% if session[:user_id] %>
+      <a href="/"><li>Home</li></a>
+      <a href="/logout"><li>Logout</li></a>
+    <% else %>
+      <a href="/"><li>Home</li></a>
+      <a href="/users/new"><li>Signup</li></a>
+      <a href="/login"><li>Login</li></a>
+    <% end %>
+  </ul>
+
+<div class="container">
+  <div class="row">
+    <div class="span8">
+      <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
+        <iframe X-Frame-Options: 'ALLOWALL' allowfullscreen="" src="https://www.youtube.com/watch?v=dZHnVvy_Hxg" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div id="main-container" class="container">
+    <div class="row">
+      <div class="col-xs-3">
+        <h3>LiveHub</h3>
+      </div>
+      <div class="col-xs-9">
+      </div>
+    </div>
+       <%= yield %>
+  </div>
+
+</body>
+</html>

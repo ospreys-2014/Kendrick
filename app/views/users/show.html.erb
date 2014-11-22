@@ -1,0 +1,18 @@
+<h1>Artist Profile</h1>
+<div id="artist-show">
+  <ul>
+    <p> <b>Username:</b> <%= @user.username %></p>
+    <p> <b>Name:</b> <%= @user.full_name %></p>
+    <p> <b>Email:</b> <%= @user.email_address %></p>
+    <p> <b>Bio:</b> <%= @user.bio %></p>
+    <p> <b>Email:</b> <%= @user.email_address %></p>
+  </ul>
+</div>
+
+<div id="user-review-box">
+  <%= render "reviews/form", locals: {review: Review.new, user: @user} %>
+</div>
+
+<div id="reviews-display">
+  <%= render "reviews/index", locals: {user: @user} %>
+</div>
