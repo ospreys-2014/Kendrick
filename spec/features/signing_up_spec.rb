@@ -5,12 +5,12 @@ feature 'Signing up' do
   scenario 'Successful sign up' do
    visit '/'
    click_link 'Signup'
-   fill_in "username", with: "Jobin"
-   fill_in "first_name", with: "jobin"
-   fill_in "last_name", with: "toby"
-   fill_in "password", with: "password"
-   fill_in "password confirmation", with: "password"
-   fill_in "email address", with: "123@gmail.com"
+   fill_in("Username", with: "Jobin")
+   fill_in("First name", with: "jobin")
+   fill_in("Last name", with: "toby")
+   fill_in("Password", with: "password")
+   fill_in("Password confirmation", with: "password")
+   fill_in("Email address", with: "123@gmail.com")
    click_button "Sign up"
    expect(page).to have_content("You have signed up successfully.")
   end
