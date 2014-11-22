@@ -4,8 +4,10 @@ feature 'Signing up' do
 
   scenario 'Successful sign up' do
    visit '/'
-   click_link 'Sign up'
+   click_link 'Signup'
    fill_in "username", with: "Jobin"
+   fill_in "first_name", with: "jobin"
+   fill_in "last_name", with: "toby"
    fill_in "password", with: "password"
    fill_in "password confirmation", with: "password"
    fill_in "email address", with: "123@gmail.com"
