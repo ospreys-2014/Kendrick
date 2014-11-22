@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   resources :reviews
 
   get 'logout' => 'sessions#destroy'
-  get 'login' => 'sessions#login'
+  get '/signin' => 'sessions#new'
+  post '/signin' => 'sessions#create'
 
   # Example of regular route:
   # get 'signup' => 'auth#view'

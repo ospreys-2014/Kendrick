@@ -7,8 +7,19 @@ class SessionsController < ApplicationController
     end
   end
 
-  def login
-    @user = User.find()
-    session[:user_id] = @user.id
+  def new
+  end
+
+  def create
+    user = User.where(username: params[:login][:username]).first
+
+    if user && user.authenticate(params[:login][:password])
+      session[:user_id] = user.id
+      flash[:notice] = "Signed in successfully."
+      redirect_to root_url
+    else
+      flash[:error] = "Sorry."
+      render :login
+    end
   end
 end
