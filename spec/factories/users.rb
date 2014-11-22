@@ -31,6 +31,10 @@ FactoryGirl.define do
       soundcloud_profile Faker::Internet.url
     end
 
+    factory :nil_soundcloud_profile do
+      soundcloud_profile nil
+    end
+
     # after(:build) do |user|
     #   user.genres << FactoryGirl.build(:genre,
     #     genre: genre, artist: user)
