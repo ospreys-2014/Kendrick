@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   validates_format_of :email_address, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 
   has_many  :ratings
+
   has_many  :reviews_as_reviewer, class_name: "Review", foreign_key: :reviewer_id
   has_many  :reviews_as_artist, class_name: "Review", foreign_key: :artist_id
   has_many  :comments, foreign_key: :commenter_id
