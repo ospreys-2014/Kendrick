@@ -4,22 +4,22 @@ describe Comment do
 
   it "is valid with a commenter, review it is commenting, and body given" do
     user = FactoryGirl.build(:user)
-    review = FactoryGirl.build(:reviews_as_reviewer)
-    coment = FactoryGirl.create(:comment, review: review, commenter: user)
+    review = FactoryGirl.build(:review_as_reviewer)
+    comment = FactoryGirl.create(:comment, review: review, commenter: user)
 
     expect(review).to be_valid
   end
 
   it "is invalid without a body given" do
-    review = FactoryGirl.build(:invalid_comment_body)
-    expect(review).to be_invalid
+    comment = FactoryGirl.build(:invalid_comment_body)
+    expect(comment).to be_invalid
   end
 
-  it "is invalid without referencing an artist" do
+  it "is invalid without referencing a review" do
     user = FactoryGirl.create(:user)
-    review = user.reviews_as_reviewer.create(body: "test")
+    comment = user.comments.create(body: "test")
 
-    expect(review).to be_invalid
+    expect(comment).to be_invalid
   end
 
   it "is invalid without referencing a reviewer" do
@@ -27,6 +27,5 @@ describe Comment do
     expect(review).to be_invalid
   end
 
-  it { should have_many(:comments) }
 end
 
