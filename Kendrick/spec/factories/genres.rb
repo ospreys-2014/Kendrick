@@ -1,5 +1,10 @@
-FactoryGirl.define do
+
+FactoryGirl.define do 
   factory :genre do
-    name { Faker::App.name }
+    name { Faker::Company.name }
+
+    factory :invalid_genre do
+      name nil
+    end
   end
 end
