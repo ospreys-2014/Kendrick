@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 $(document).ready(function() {
-  $( '.check-box' ).click(function(event){
+  $( '#check-box' ).click(function(event){
     $('.artist-form').toggle();
   })
 });
