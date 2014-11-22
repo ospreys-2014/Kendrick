@@ -36,8 +36,8 @@
     <%= f.password_field :password_confirmation %>
   </div>
   <!-- Are you an artist? -->
-  <div class="field check-box">
-    <%= f.check_box(:artist) %>
+  <div class="field">
+    <span id="check-box"><%= f.check_box(:artist) %></span>
     <%= f.label(:artist, "I am an Artist") %>
   </div>
   <div class="field artist-form" style="display:none;">
