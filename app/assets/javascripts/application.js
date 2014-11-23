@@ -22,11 +22,11 @@ $(document).ready(function() {
   $('#signup-link').click(function(event){
     event.preventDefault();
     $('#login-partial').hide();
-    $('#signup-partial').show();
+    $('#signup-partial').fadeIn('slow');
   })
   $('#signin-link').click(function(event){
     event.preventDefault();
     $('#signup-partial').hide();
-    $('#login-partial').show();
+    $('#login-partial').fadeIn('slow');
   })
 });
