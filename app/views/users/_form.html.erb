@@ -51,6 +51,9 @@
       <%= f.text_field :soundcloud_profile %>
     </div>
     <div class="field artist-form" style="display:none;">
+      <%= image_tag @user.avatar.url %>
+    </div>
+    <div class="field artist-form" style="display:none;">
     Pick your genres:<br />
       <%= check_box_tag("user[genres][Jazz]", 1, false ) %>
       <%= f.label(:genres, "Jazz") %>
