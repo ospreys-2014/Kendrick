@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
       redirect_to genres_path
     else
       flash[:error] = "Sorry."
-      render :new
+      redirect_to root_path
     end
   end
 end
