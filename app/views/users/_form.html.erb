@@ -49,19 +49,20 @@
       <%= f.label :soundcloud_profile %><br />
       <%= f.text_field :soundcloud_profile %>
     </div>
-    <div class="field">
+    <div class="field artist-form" style="display:none;">
+    Pick your categories:<br />
       <%= check_box_tag("user[genres][Jazz]", 1, false ) %>
       <%= f.label(:genres, "Jazz") %>
     </div>
-    <div class="field">
+    <div class="field artist-form" style="display:none;">
       <%= check_box_tag("user[genres][Hip Hop]", 2, false ) %>
       <%= f.label(:genres, "Hip Hop") %>
     </div>
-    <div class="field">
+    <div class="field artist-form" style="display:none;">
       <%= check_box_tag("user[genres][Classical]", 3, false ) %>
       <%= f.label(:genres, "Classical") %>
     </div>
-    <div class="field">
+    <div class="field artist-form" style="display:none;">
       <%= check_box_tag("user[genres][Fiftys]", 4, false ) %>
       <%= f.label(:genres, "50's") %>
     </div>
