@@ -1,3 +1,5 @@
+require 'pry'
+
 class UsersController < ApplicationController
 
   def show
@@ -10,8 +12,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
+    p params
     if @user.save
+      User.assign_genre(params[:user][:genres], @user)
       session[:user_id] = @user.id
       flash[:notice] = "You have signed up successfully."
       redirect_to genres_path
