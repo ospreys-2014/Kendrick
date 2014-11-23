@@ -38,6 +38,9 @@
     </ul>
   </div>
 </div>
+    <% if flash[:error] %>
+      <center><%= flash[:error] %></center>
+    <% end %>
     <div class="content">
       <%= yield %>
       <center><div id="signup-partial" style="display:none;">

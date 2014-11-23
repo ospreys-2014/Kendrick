@@ -18,8 +18,8 @@ class SessionsController < ApplicationController
       flash[:notice] = "Signed in successfully."
       redirect_to genres_path
     else
-      flash[:error] = "Sorry."
-      render :new
+      flash[:error] = "Sorry, those credentials are incorrect."
+      redirect_to root_path
     end
   end
 end
