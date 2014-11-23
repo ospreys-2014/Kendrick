@@ -11,15 +11,19 @@ class User < ActiveRecord::Base
             format: { with: /https:\/\/soundcloud\.com\/.*?/ix }
   validates :email_address, presence: true
   validates_format_of :email_address, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+<<<<<<< HEAD
   validates :genres, presence: true, if: :artist
+=======
+  validates_with ArtistValidator
+>>>>>>> add new validation to prevent ratings being done on non-artist users
 
   # ratings_as_user means that you are the user giving ratings 
   # on reviews, comments, or artists
-  has_many  :ratings_as_user, class_name: "User"
+  has_many  :ratings_as_user, class_name: "Rating", foreign_key: :user_id
 
   # ratings_as_artist means that you are the artist who
   # is receiving many ratings (like you are a review or comment)
-  has_many  :ratings_as_artist, class_name: "User"
+  has_many  :ratings_as_artist, class_name: "Rating", foreign_key: :artist_id
 
   # reviews_as_reviewer means you are giving a review as a user
   has_many  :reviews_as_reviewer, class_name: "Review", foreign_key: :reviewer_id
