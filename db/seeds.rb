@@ -26,6 +26,6 @@ ArtistGenre.create(artist_id:3, genre_id:3)
 ArtistGenre.create(artist_id:4, genre_id:4)
 
 5.times do
-  Review.create(body: Faker::Lorem.sentence, artist: User.all.sample)
+  Review.create(body: Faker::Lorem.sentence, artist: User.all.sample, reviewer: User.all.sample)
 end
 

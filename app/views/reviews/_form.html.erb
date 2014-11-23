@@ -3,7 +3,7 @@
     <%= f.label :review %><br>
     <%= f.text_area :body %><br>
     <%= f.hidden_field :artist_id, { :value => @user.id } %>
-
+    <%= f.hidden_field :reviewer_id, { :value => session[:user_id] } %>
     <%= f.submit %>  </p>
 
 <% end %>
