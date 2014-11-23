@@ -1,8 +1,9 @@
 require 'spec_helper'
 
 feature "signing in." do
+
   scenario 'Signing in via form' do
-    user = User.create(username: "ali", password: "1")
+    user = User.where(username: "ali", password: "1").first
     visit '/'
     click_link 'Login'
     fill_in 'Username', with: user.name
