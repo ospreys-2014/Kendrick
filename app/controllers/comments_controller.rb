@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 
+
   def create
 
   end
@@ -10,3 +11,5 @@ class CommentsController < ApplicationController
   def show
   end
 end
+
+
