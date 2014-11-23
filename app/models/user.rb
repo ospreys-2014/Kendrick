@@ -26,9 +26,9 @@ class User < ActiveRecord::Base
     reviews_as_reviewer + reviews_as_artist
   end
 
-  def self.assign_genre(genres, user)
+  def assign_genre(genres)
     genres.each do |genre|
-      user.artist_genres.create(genre_id: genre[1])
+      self.artist_genres.create(genre_id: genre[1])
     end
   end
 
