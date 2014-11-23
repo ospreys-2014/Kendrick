@@ -1,5 +1,5 @@
-<h1>Sign in</h1>
-<%= form_for :signin, method: "GET", :url => genres_path do |f| %>
+<h1>Sign In</h1>
+<%= form_for :signin, :url => {:action => "create", :controller => "sessions"} do |f| %>
  <p>
  <%= f.label :username %><br />
  <%= f.text_field :username %>
