@@ -8,5 +8,6 @@ class Review < ActiveRecord::Base
   belongs_to  :artist, class_name: "User"
 
   has_many  :comments
+  has_many  :ratings, as: :ratingable
 
 end
