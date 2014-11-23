@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :genres
   resources :artists
   resources :reviews
+  resources :comments
 
   get 'logout' => 'sessions#destroy'
   get '/signin' => 'sessions#new'
