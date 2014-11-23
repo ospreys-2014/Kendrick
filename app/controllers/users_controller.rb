@@ -12,9 +12,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    p params
+
     if @user.save
-      @user.assign_genre(params[:user][:genres])
+      if @user.artist
+        @user.assign_genre(params[:user][:genres])
+      end
       session[:user_id] = @user.id
       flash[:notice] = "You have signed up successfully."
       redirect_to genres_path

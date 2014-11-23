@@ -4,7 +4,7 @@ feature 'Signing up' do
 
   scenario 'Successful sign up' do
    visit '/'
-   click_link 'Signup'
+   click_link 'SignUp'
    fill_in("Username", with: "Jobin")
    fill_in("First name", with: "jobin")
    fill_in("Last name", with: "toby")

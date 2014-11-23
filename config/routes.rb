@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy'
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
+  # post '/' => 'sessions#'
 
   # Example of regular route:
   # get 'signup' => 'auth#view'

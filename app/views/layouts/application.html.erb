@@ -8,28 +8,43 @@
 </head>
 <body>
 
-  <ul>
-    <!-- Renders logout if there is a session -->
-    <% if session[:user_id] %>
-      <a href="/genres"><li>Home</li></a>
-      <a href="/logout"><li>Logout</li></a>
-    <% else %>
-      <a href="/"><li>Home</li></a>
-      <a href="/users/new"><li><span id="signup-link">Signup</span></li></a>
-      <span id="login-link"><a href="/signin"><li>Login</li></a></span>
-    <% end %>
-  </ul>
-
-  <div id="main-container" class="container">
-    <div class="row">
-      <div class="col-xs-3">
-        <h2>LiveHub</h2>
-      </div>
-      <div class="col-xs-9">
-      </div>
-    </div>
-       <%= yield %>
+<div class="navbar navbar-inverse">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/">LiveHub</a>
   </div>
+  <div class="navbar-collapse collapse navbar-inverse-collapse">
+    <ul class="nav navbar-nav">
+      <% if session[:user_id] %>
+        <li><a href="/genres">Genres</a></li>
+        <li><a href="/logout">LogOut</a></li>
+      <% else %>
+        <li id="signup"><a id="signup-link" href="/users/new">SignUp</a></li>
+        <li id="login"><a id="signin-link" href="/signin">Login</a></li>
+      <% end %>
+    </ul>
+    <form class="navbar-form navbar-left">
 
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="/" class="dropdown-toggle" data-toggle="dropdown">Genres<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="/genres/jazz">Jazz</a></li>
+          <li><a href="/genres/hip-hop">Hip-Hop</a></li>
+          <li><a href="/genres/classical">Classical</a></li>
+          <li><a href="/genres/50s">50's</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+    <%= yield %>
+    <div id="signup-partial" style="display:none;">
+      <%= render partial: 'users/form', locals: {user: @user = User.new()} %>
+    </div>
+    <div id="login-partial" style="display:none;">
+      <%= render partial: 'sessions/form' %>
+    </div>
+  </div>
 </body>
 </html>
