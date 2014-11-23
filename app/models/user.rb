@@ -41,12 +41,25 @@ class User < ActiveRecord::Base
     reviews_as_reviewer + reviews_as_artist
   end
 
+
   def assign_genre(genres)
     if self.artist
       genres.each do |genre|
         self.artist_genres.create(genre_id: genre[1])
       end
     end
+  end
+
+  def total_reviews_created
+    self.reviews_as_reviewer.count
+  end
+
+  def total_reviews_received
+    self.reviews_as_artist.count
+  end
+
+  def average_rating
+
   end
 
 end
