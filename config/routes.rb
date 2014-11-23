@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-  resources :users
+  resources :users do
+    resources :ratings
+  end
   resources :genres
   resources :artists
   resources :reviews
