@@ -1,15 +1,29 @@
 class CommentsController < ApplicationController
 
-
-  def create
+  def show
+    @comment = Commnet.find(params[:id])
 
   end
 
   def new
+    @comment = Comment.new(params[:comment])
   end
 
-  def show
+  def create
+    @comment = Comment.new(comment_params)
+    p params[:comment][:review_id]
+    p params[:comment][:commenter_id]
+    @comment.review = Review.find(params[:comment][:review_id])
+    @comment.commenter = User.find(params[:comment][:commenter_id])
+    @comment.save
+    redirect_to(:back)
   end
+
+  private
+    def comment_params
+      params.require(:comment).permit(:body)
+    end
+
 end
 
 

@@ -1,8 +1,14 @@
-<ul>
+<h1>Reviews on <%= @user.full_name %> </h1>
 
-<% @user.reviews_as_artist.each do |review| %>
-  <div class="artist-review" id="<%= "review-#{review.id}" %>">
-  <li>  <%= review.body %> </li>
-  </div>
-<% end %>
-</ul>
+<table>
+  <% @user.reviews_as_artist.each do |review| %>
+    <tr class="artist-review" id="<%= "review-#{review.id}" %>">
+
+      <td><%= review.body %></td>
+      <td><%= link_to 'Comment', new_comment_path(:review) %> </td>
+      <td><%= link_to 'Edit', edit_review_path(review) %> </td>
+      <td><%= link_to 'Delete', review_path(review), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+
+</table>
