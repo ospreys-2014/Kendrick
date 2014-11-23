@@ -5,6 +5,31 @@
   <% flash[:notice] = nil %>
 <% end %>
 
+<ul class="rig columns-3">
+  <li class="zoom-container">
+    <span class="zoom-caption">
+      <h2><center>Hello</center></h2>
+    </span>
+    <img src="http://www.centrestagelive.com.au/JAZZ_BANDS_files/trumpet-jazz-band.jpg" />
+  </li>
+
+  <li>
+    <img src="http://blog.iandi-store.com/wp-content/uploads/2012/06/a-tribe-called-quest-check-the-rhime-hd-720p-1991.jpg" />
+    <h3>Hip-Hop</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+  </li>
+  <li>
+    <img src="http://www.centrestagelive.com.au/JAZZ_BANDS_files/trumpet-jazz-band.jpg" />
+    <h3>Image Title</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+  </li>
+  <li>
+    <img src="http://www.centrestagelive.com.au/JAZZ_BANDS_files/trumpet-jazz-band.jpg" />
+    <h3>Image Title</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+  </li>
+</ul>
+
 <% @genres.each do |genre| %>
   <div class="image-zoom-container">
     <div class="zoom-container">
@@ -20,5 +45,20 @@
       </span>
       <img src="" />
     </div>
+
+    <div class="zoom-container">
+      <span class="zoom-caption">
+        <h2><center><%= link_to "#{genre.name}", genre_path(genre) %></center></h2>
+      </span>
+      <img src="" />
+    </div>
+
+    <div class="zoom-container">
+      <span class="zoom-caption">
+        <h2><center><%= link_to "#{genre.name}", genre_path(genre) %></center></h2>
+      </span>
+      <img src="" />
+    </div>
+
   </div>
 <% end %>
