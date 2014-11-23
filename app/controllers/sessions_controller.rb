@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
       redirect_to genres_path
     else
       flash[:notice] = "Sorry, those credentials are incorrect."
-      redirect_to root_path
+      redirect_to signin_path
     end
   end
 end
