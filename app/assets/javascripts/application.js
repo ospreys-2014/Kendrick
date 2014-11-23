@@ -18,4 +18,17 @@ $(document).ready(function() {
   $( '#check-box' ).click(function(event){
     $('.artist-form').toggle();
   })
+  // toggles signup and login forms
+  $('#signup-link').click(function(event){
+    event.preventDefault();
+    $('#login-partial').hide();
+    $('#signup-partial').show();
+    console.log("success");
+  })
+  $('#signin-link').click(function(event){
+    event.preventDefault();
+    $('#signup-partial').hide();
+    $('#login-partial').show();
+    console.log("success");
+  })
 });

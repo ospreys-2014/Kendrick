@@ -16,7 +16,7 @@
     <% else %>
       <a href="/"><li>Home</li></a>
       <a href="/users/new"><li><span id="signup-link">Signup</span></li></a>
-      <span id="login-link"><a href="/signin"><li>Login</li></a></span>
+      <span id="login-link"><a href="/signin"><li><span id="signin-link">Login</span></li></a></span>
     <% end %>
   </ul>
 
@@ -29,7 +29,12 @@
       </div>
     </div>
        <%= yield %>
+    <div id="signup-partial" style="display:none;">
+      <%= render partial: 'users/form', locals: {user: @user = User.new()} %>
+    </div>
+    <div id="login-partial" style="display:none;">
+      <%= render partial: 'sessions/new' %>
+    </div>
   </div>
-
 </body>
 </html>
