@@ -1,7 +1,13 @@
 class ArtistValidator < ActiveModel::Validator
   def validate(record)
-    if record.artist == false
+    user = find_user record.ratingable_id
+    unless user.artist == true
       record.errors[:base] << "This user is not an artist."
     end
+  end
+
+
+  def find_user(id)
+    User.find(id)
   end
 end
