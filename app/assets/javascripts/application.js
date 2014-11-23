@@ -23,12 +23,10 @@ $(document).ready(function() {
     event.preventDefault();
     $('#login-partial').hide();
     $('#signup-partial').show();
-    console.log("success");
   })
   $('#signin-link').click(function(event){
     event.preventDefault();
     $('#signup-partial').hide();
     $('#login-partial').show();
-    console.log("success");
   })
 });
