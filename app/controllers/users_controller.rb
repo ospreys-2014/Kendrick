@@ -14,9 +14,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      if @user.artist
-        @user.assign_genre(params[:user][:genres])
-      end
+      # if @user.artist
+      @user.assign_genre(params[:user][:genres])
+      # end
       session[:user_id] = @user.id
       flash[:notice] = "You have signed up successfully."
       redirect_to genres_path

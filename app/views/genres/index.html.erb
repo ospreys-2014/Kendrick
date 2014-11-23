@@ -2,6 +2,7 @@
 
 <% if flash[:notice] %>
   <center><%= flash[:notice] %></center>
+  <% flash[:notice] = nil %>
 <% end %>
 
 <% @genres.each do |genre| %>

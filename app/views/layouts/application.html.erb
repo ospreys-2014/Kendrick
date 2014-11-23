@@ -37,8 +37,8 @@
     </ul>
   </div>
 </div>
-    <% if flash[:error] %>
-      <center><%= flash[:error] %></center>
+    <% if flash[:notice] %>
+      <center><%= flash[:notice] %></center>
     <% end %>
     <div class="content">
       <%= yield %>
