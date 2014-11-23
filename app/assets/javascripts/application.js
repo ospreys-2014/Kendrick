@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 $(document).ready(function() {
+  // toggles the artist sub form
   $( '#check-box' ).click(function(event){
     $('.artist-form').toggle();
   })

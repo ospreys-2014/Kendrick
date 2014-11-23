@@ -5,13 +5,6 @@ describe User do
   describe "passwords" do
     it "needs a password and confirmation to save" do
       u = User.new(username: "steve", first_name: "steve", last_name: "jobin", email_address: "123@gmail.com", password: "123", password_confirmation: "123")
-      # u.save
-      # expect(u).to_not be_valid
-      # u.password = "password"
-      # u.password_confirmation = ""
-      # u.save
-      # expect(u).to_not be_valid
-      # u.password_confirmation = "password"
       u.save
       expect(u).to be_valid
     end
