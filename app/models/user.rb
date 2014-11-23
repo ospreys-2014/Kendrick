@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   validates :soundcloud_profile, allow_nil: true, allow_blank: true, format: { with: /https:\/\/soundcloud\.com\/.*?/ix }
   validates :email_address, presence: true
   validates_format_of :email_address, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+  validates :genres, presence: true, if: :artist
 
   has_many  :ratings
 
