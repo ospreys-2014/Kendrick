@@ -6,6 +6,7 @@ FactoryGirl.define do
     last_name { Faker::Name.last_name }
     email_address { Faker::Internet.free_email }
     soundcloud_profile { "https://soundcloud.com/whatisup" }
+    artist { true }
     
     factory :invalid_username do
       username nil
@@ -37,6 +38,10 @@ FactoryGirl.define do
 
     factory :blank_soundcloud_profile do
       soundcloud_profile ""
+    end
+
+    factory :non_artist do
+      artist false
     end
 
     # after(:build) do |user|
