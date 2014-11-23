@@ -125,3 +125,7 @@
   .flex-video { padding-top: 0; }
 }
 
+#signup-partial, #login-partial {
+  padding-left: 30px;
+}
+
