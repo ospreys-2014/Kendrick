@@ -28,7 +28,7 @@ feature 'Signing up' do
    expect(page.current_path).to eq genres_path
   end
 
-  scenario 'Can see genres_path post signup' do
+  scenario 'User can specify that they are an artist via checkbox' do
    visit '/'
    click_link 'SignUp'
    fill_in("Username", with: "Jobin")
@@ -38,7 +38,6 @@ feature 'Signing up' do
    fill_in("Password confirmation", with: "password")
    fill_in("Email address", with: "123@gmail.com")
    check('user_artist')
-   save_and_open_page
    expect{page.check('user_artist').to eq true}
   end
 
