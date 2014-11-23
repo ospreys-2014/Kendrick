@@ -5,7 +5,19 @@
 <% end %>
 
 <% @genres.each do |genre| %>
-  <li>
-    <%= link_to "#{genre.name}", genre_path(genre) %>
-  </li>
+  <div class="image-zoom-container">
+    <div class="zoom-container">
+        <span class="zoom-caption">
+          <h2><center><%= link_to "#{genre.name}", genre_path(genre) %></center></h2>
+        </span>
+        <img src="http://www.centrestagelive.com.au/JAZZ_BANDS_files/trumpet-jazz-band.jpg" />
+    </div>
+
+    <div class="zoom-container">
+      <span class="zoom-caption">
+        <h2><center><%= link_to "#{genre.name}", genre_path(genre) %></center></h2>
+      </span>
+      <img src="" />
+    </div>
+  </div>
 <% end %>
