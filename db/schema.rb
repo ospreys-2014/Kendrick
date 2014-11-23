@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20141122194806) do
 
   create_table "ratings", force: true do |t|
     t.integer  "user_id"
+    t.integer  "rating"
     t.integer  "ratingable_id"
     t.string   "ratingable_type"
     t.datetime "created_at"

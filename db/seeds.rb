@@ -25,17 +25,17 @@ Genre.create(name:"Hip-Hop")
 Genre.create(name:"Classical")
 Genre.create(name:"50's")
 
-user1.artist_genres.create(genre_id: 1)
-user2.artist_genres.create(genre_id: 2)
-user3.artist_genres.create(genre_id: 3)
-user4.artist_genres.create(genre_id: 4)
+User.find(1).artist_genres.create(genre_id: 1)
+User.find(2).artist_genres.create(genre_id: 2)
+User.find(3).artist_genres.create(genre_id: 3)
+User.find(4).artist_genres.create(genre_id: 4)
 
 # ArtistGenre.create(artist_id:1, genre_id:1)
 # ArtistGenre.create(artist_id:2, genre_id:2)
 # ArtistGenre.create(artist_id:3, genre_id:3)
 # ArtistGenre.create(artist_id:4, genre_id:4)
 
-5.times do
-  Review.create(body: Faker::Lorem.sentence, artist: User.all.sample)
-end
+# 5.times do
+#   Review.create(body: Faker::Lorem.sentence, artist: User.all.sample)
+# end
 
