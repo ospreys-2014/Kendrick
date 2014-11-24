@@ -48,10 +48,14 @@
     </div>
     <div class="field artist-form" style="display:none;">
       <%= f.label :soundcloud_profile %><br />
-      <%= f.text_field :soundcloud_profile %>
+      <%= f.text_field :soundcloud_profile %><br />
     </div>
+    <!-- image upload -->
     <div class="field artist-form" style="display:none;">
-      <%= image_tag @user.avatar.url %>
+      Upload an image:<br />
+      <%= form_for @user, :url => user_path, :html => { :multipart => true } do |f| %><br />
+      <%= f.file_field :avatar %><br />
+      <% end %>
     </div>
     <div class="field artist-form" style="display:none;">
     Pick your genres:<br />
