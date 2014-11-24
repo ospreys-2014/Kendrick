@@ -1,8 +1,9 @@
 <%= form_for :comment, url: comments_path do |f| %>
+<h1><%= puts params %></h1>
    <p>
     <%= f.label :comment %><br>
     <%= f.text_area :body %><br>
-    <%= f.hidden_field :review_id, { :value => params[:id] } %>
+    <%= f.hidden_field :review_id, { :value => params[:format] } %>
     <%= f.hidden_field :commenter_id, { :value => session[:user_id] } %>
     <%= f.submit %>  </p>
 
