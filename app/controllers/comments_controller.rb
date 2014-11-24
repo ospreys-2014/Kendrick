@@ -11,12 +11,11 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    p params[:comment][:review_id]
-    p params[:comment][:commenter_id]
     @comment.review = Review.find(params[:comment][:review_id])
     @comment.commenter = User.find(params[:comment][:commenter_id])
     @comment.save
-    redirect_to(:back)
+    @user = @comment.review.artist
+    redirect_to("/users/#{@user.id}")
   end
 
   private
