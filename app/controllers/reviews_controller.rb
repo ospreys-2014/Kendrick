@@ -40,8 +40,13 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @user = @review.artist
     @review.destroy
-
-    redirect_to "/users/#{@user.id}"
+    respond_to do |format|
+      format.js do
+        render nothing: true
+      end
+      format.any do
+      redirect_to "/users/#{@user.id}"
+    end
   end
 
 
