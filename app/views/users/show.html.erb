@@ -10,7 +10,9 @@
   </ul>
 </div>
 
-<div id="rating-box"></div>
+<div id="rating-box">
+  <%= render partial: "ratings/form", locals: { user: @user, current_user: @current_user, rating: @rating } %>
+</div>
 
 <div id="user-review-box">
   <%= render "reviews/form", locals: {review: Review.new, user: @user} %>
