@@ -51,6 +51,8 @@ group :test do
 end
 
 gem 'travis-lint'
+
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # Use unicorn as the app server
 # gem 'unicorn'
 
