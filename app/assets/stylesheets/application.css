@@ -259,3 +259,73 @@ td.review-comment {
   border: 1px black solid;
   display: block;
 }
+.button-blue {
+  color: white;
+  background-color: #0076df;
+  border-radius: 3px;
+  -webkit-transition-duration: .1s;
+          transition-duration: .1s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-property: box-shadow, background-color;
+          transition-property: box-shadow, background-color;
+}
+
+.button-blue:hover {
+  opacity: .875;
+}
+
+.button-blue:active,
+.button-blue.is-active {
+  box-shadow: inset 0 0 0 32px rgba(0, 0, 0, .125), inset 0 2px 3px 0 rgba(0, 0, 0, .25);
+}
+
+.button-blue:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, .5), 0 0 1px 4px rgba(0, 118, 223, .5);
+}
+
+.button-blue:disabled,
+.button-blue.is-disabled {
+  opacity: .5;
+}
+
+.button-blue-outline {
+  line-height: 1;
+  color: #0076df;
+  background-color: transparent;
+  border-radius: 3px;
+  border: 2px solid #0076df;
+  -webkit-transition-duration: .1s;
+          transition-duration: .1s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-property: box-shadow, background-color;
+          transition-property: box-shadow, background-color;
+}
+
+.button-blue-outline:hover,
+.button-blue-outline.is-active {
+  color: white;
+  background-color: #0076df;
+}
+
+.button-blue-outline:active {
+  box-shadow: inset 0 3px 3px 0 rgba(0, 0, 0, .25);
+}
+
+.button-blue-outline:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, .5), 0 0 1px 4px rgba(0, 118, 223, .5);
+}
+
+.button-blue-outline:disabled,
+.button-blue-outline.is-disabled {
+  color: #0076df;
+  background-color: transparent;
+  opacity: .5;
+}
+
+.review-comment-quote {
+  text-indent: 50px;
+}

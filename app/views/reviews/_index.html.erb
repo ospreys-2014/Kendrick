@@ -1,18 +1,16 @@
 <h1>Reviews on <%= @user.full_name %> </h1>
-
-<table>
   <% @user.reviews_as_artist.each do |review| %>
-    <tr class="artist-review" id="<%= "review-#{review.id}" %>">
-
-      <td><%= review.body %></td>
-      <td><%= link_to 'Comment', new_comment_path(review) %> </td>
-      <td><%= link_to 'Edit', edit_review_path(review) %> </td>
-      <td><%= link_to 'Delete', review_path(review), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <tr><% review.comments.each do |comment| %>
-          <td class="review-comment"><%= comment.body %></td>
-        </tr>
-        <% end %>
-    </tr>
+      <blockquote>
+      <p><%= review.body %></p>
+      <small><%= review.reviewer.first_name %><cite title="Source Title">(<%= review.reviewer.username %>)</cite></small>
+      </blockquote>
+    <%= link_to 'Comment', new_comment_path(review) %>
+    <%= link_to 'Edit', edit_review_path(review) %>
+    <%= link_to 'Delete', review_path(review), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% review.comments.each do |comment| %>
+      <blockquote class="review-comment-quote">
+      <p><%= comment.body %></p>
+      <small><%= comment.commenter.first_name %><cite title="Source Title">(<%= comment.commenter.username %>)</cite></small>
+      </blockquote>
+      <% end %>
   <% end %>
-
-</table>
