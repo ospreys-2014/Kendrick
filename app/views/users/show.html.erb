@@ -2,7 +2,6 @@
 <div id="artist-show">
   <div class="profile-pic">
     <%= image_tag @user.avatar.url %>
-
   </div>
   <ul>
     <p> <b>Username:</b> <%= @user.username %></p>
@@ -27,6 +26,3 @@
   <%= render "reviews/index", locals: {user: @user} %>
 </div>
 
-<div id="review-rating-box">
-  <%= render "reviews/form", locals: {review: Review.new, user: @user} %>
-</div>
