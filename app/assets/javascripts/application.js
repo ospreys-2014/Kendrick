@@ -29,8 +29,4 @@ $(document).ready(function() {
     $('#signup-partial').hide();
     $('#login-partial').fadeIn('slow');
   })
-  // $("form[data-remote=true]").on("ajax:success",function(e){
-  //   var listItem = $(e.target).closest("li");
-  //   listItem.remove();
-  // })
 });

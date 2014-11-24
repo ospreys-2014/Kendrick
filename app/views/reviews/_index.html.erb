@@ -6,7 +6,7 @@
       </blockquote>
     <%= link_to 'Comment', new_comment_path(review) %>
     <%= link_to 'Edit', edit_review_path(review) %>
-    <%= link_to 'Delete', review_path(review), method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Delete', review_path(review), method: :delete, data: { confirm: 'Are you sure?' } %>
       <% review.comments.each do |comment| %>
       <blockquote class="review-comment-quote">
       <p><%= comment.body %></p>
