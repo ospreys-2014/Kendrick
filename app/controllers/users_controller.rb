@@ -12,7 +12,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.avatar = params[:avatar]
 
     if @user.save
       @user.assign_genre(params[:user][:genres])
@@ -27,7 +26,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :first_name, :last_name, :bio, :soundcloud_profile, :email_address, :password, :password_confirmation, :artist, :avatar)
+    params.require(:user).permit(:username, :first_name, :last_name, :bio, :soundcloud_profile, :email_address, :password, :password_confirmation, :artist, :genres)
   end
 
 end

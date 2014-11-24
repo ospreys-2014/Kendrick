@@ -56,7 +56,7 @@
       <%= f.label(:genres, "Jazz") %>
     </div>
     <div class="field artist-form" style="display:none;">
-      <%= check_box_tag("user[genres][Hip Hop]", 2, false ) %>
+      <%= check_box_tag("user[genres][HipHop]", 2, false ) %>
       <%= f.label(:genres, "Hip Hop") %>
     </div>
     <div class="field artist-form" style="display:none;">
@@ -67,11 +67,39 @@
       <%= check_box_tag("user[genres][Fiftys]", 4, false ) %>
       <%= f.label(:genres, "50's") %>
     </div>
+    <div class="field artist-form" style="display:none;">
+      <%= check_box_tag("user[genres][Pop]", 5, false ) %>
+      <%= f.label(:genres, "Pop") %>
+    </div>
+    <div class="field artist-form" style="display:none;">
+      <%= check_box_tag("user[genres][Opera]", 6, false ) %>
+      <%= f.label(:genres, "Opera") %>
+    </div>
+    <div class="field artist-form" style="display:none;">
+      <%= check_box_tag("user[genres][R&B-Soul]", 7, false ) %>
+      <%= f.label(:genres, "R&B/Soul") %>
+    </div>
+    <div class="field artist-form" style="display:none;">
+      <%= check_box_tag("user[genres][KPop]", 8, false ) %>
+      <%= f.label(:genres, "K-Pop") %>
+    </div>
+    <div class="field artist-form" style="display:none;">
+      <%= check_box_tag("user[genres][Blues]", 9, false ) %>
+      <%= f.label(:genres, "Blues") %>
+    </div>
+    <div class="field artist-form" style="display:none;">
+      <%= check_box_tag("user[genres][Screamo]", 10, false ) %>
+      <%= f.label(:genres, "Screamo") %>
+    </div>
+    <div class="field artist-form" style="display:none;">
+      <%= check_box_tag("user[genres][Heavy]", 11, false ) %>
+      <%= f.label(:genres, "Heavy Metal") %>
+    </div>
+    <div class="field artist-form" style="display:none;">
+      <%= check_box_tag("user[genres][Twerk]", 12, false ) %>
+      <%= f.label(:genres, "Strickly Twerkin") %>
+    </div>
     <div class="actions">
-      Upload an image:<br />
-      <%= form_for @user, :url => {:action => "create", :controller => "sessions"}, :html => { :multipart => true } do |f| %>
-      <%= f.file_field :avatar %>
-      <% end %>
       <%= f.submit "Sign up" %>
     </div>
 </div>
