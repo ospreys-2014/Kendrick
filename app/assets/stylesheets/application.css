@@ -221,6 +221,7 @@ ul.rig.columns-3 li {
   width: 30.83%; /* this value + 2.5 should = 33% */
 }
 
+<<<<<<< HEAD
 ul.rig li img {
   max-width: 100%;
   height: 300px;
@@ -272,4 +273,5 @@ td.review-comment {
 body {
   background: url('daftpun.png') no-repeat center center fixed;
 }
+
 
