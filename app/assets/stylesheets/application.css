@@ -225,9 +225,18 @@ h1#comment-tag {
   margin-left: 40px;
 }
 
+h1#review-tag {
+  margin-left: 40px;
+}
+
 .comment-box {
   margin-left: 40px;
 }
+
+.review-box {
+  margin-left: 40px;
+}
+
 tr.artist-review {
   border: 1px black solid;
   padding: 5px;
