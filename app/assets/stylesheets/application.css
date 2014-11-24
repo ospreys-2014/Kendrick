@@ -226,3 +226,48 @@ ul.rig li {
 ul.rig.columns-3 li {
   width: 30.83%; /* this value + 2.5 should = 33% */
 }
+
+div#user-review-box {
+  margin-left: 40px;
+}
+
+div#reviews-display {
+  margin-left: 40px;
+}
+
+div#artist-show {
+  margin-left: 120px;
+}
+
+h1#artist-tag {
+  margin-left: 40px;
+}
+
+h1#comment-tag {
+  margin-left: 40px;
+}
+
+p#link-tag {
+  margin-left: 40px;
+}
+.comment-box {
+  margin-left: 40px;
+}
+tr.artist-review {
+  border: 1px black solid;
+  padding: 5px;
+}
+
+td {
+  padding: 5px;
+}
+
+tr:after {
+  content: "\00a0";
+}
+
+td.review-comment {
+  margin: 5px 30px;
+  border: 1px black solid;
+  display: block;
+}

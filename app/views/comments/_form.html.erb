@@ -1,10 +1,10 @@
 <%= form_for :comment, url: comments_path do |f| %>
 <h1><%= puts params %></h1>
-   <p>
+  <div class="comment-box">
     <%= f.label :comment %><br>
     <%= f.text_area :body %><br>
     <%= f.hidden_field :review_id, { :value => params[:format] } %>
     <%= f.hidden_field :commenter_id, { :value => session[:user_id] } %>
-    <%= f.submit %>  </p>
-
+    <%= f.submit %>
+  </div>
 <% end %>
