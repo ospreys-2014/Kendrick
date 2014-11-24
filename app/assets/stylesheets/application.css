@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
 */
-
 @import url("//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700");/*!
  * bootswatch v3.3.1+1
  * Homepage: http://bootswatch.com
@@ -189,11 +188,6 @@ ul.rig li {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
-ul.rig li img {
-  max-width: 100%;
-  height: auto;
-  margin: 0 0 10px;
-}
 ul.rig li h3 {
   margin: 0 0 5px;
 }
@@ -225,4 +219,9 @@ ul.rig li {
 
 ul.rig.columns-3 li {
   width: 30.83%; /* this value + 2.5 should = 33% */
+}
+ul.rig li img {
+  max-width: 100%;
+  height: 300px;
+  margin: 0 0 10px;
 }
