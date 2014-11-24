@@ -1,5 +1,8 @@
 <h1>Artist Profile</h1>
 <div id="artist-show">
+  <div class="profile-pic">
+    <%= image_tag @user.avatar.url %>
+  </div>
 <ul>
 <li> <%= @user.username %></li>
 <li> <%= @user.first_name %></li>
