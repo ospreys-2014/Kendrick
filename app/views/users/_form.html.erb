@@ -50,13 +50,6 @@
       <%= f.label :soundcloud_profile %><br />
       <%= f.text_field :soundcloud_profile %><br />
     </div>
-    <!-- image upload -->
-    <div class="field artist-form" style="display:none;">
-      Upload an image:<br />
-      <%= form_for @user, :url => user_path, :html => { :multipart => true } do |f| %><br />
-      <%= f.file_field :avatar %><br />
-      <% end %>
-    </div>
     <div class="field artist-form" style="display:none;">
     Pick your genres:<br />
       <%= check_box_tag("user[genres][Jazz]", 1, false ) %>
@@ -75,6 +68,10 @@
       <%= f.label(:genres, "50's") %>
     </div>
     <div class="actions">
+      Upload an image:<br />
+      <%= form_for @user, :url => {:action => "create", :controller => "sessions"}, :html => { :multipart => true } do |f| %>
+      <%= f.file_field :avatar %>
+      <% end %>
       <%= f.submit "Sign up" %>
     </div>
 </div>

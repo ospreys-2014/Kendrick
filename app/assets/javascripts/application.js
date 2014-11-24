@@ -16,7 +16,7 @@
 $(document).ready(function() {
   // toggles the artist sub form
   $( '#check-box' ).click(function(event){
-    $('.artist-form').toggle();
+    $('.artist-form').toggle('slow');
   })
   // toggles signup and login forms
   $('#signup-link').click(function(event){

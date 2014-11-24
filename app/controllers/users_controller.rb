@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.avatar = params[:avatar]
 
     if @user.save
       @user.assign_genre(params[:user][:genres])

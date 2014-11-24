@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration
       t.text    :bio
       t.string  :soundcloud_profile
       t.boolean :artist, default: false
+      t.attachment :avatar
 
       t.timestamps
     end
