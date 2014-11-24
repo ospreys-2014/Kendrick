@@ -12,10 +12,6 @@ class Rating < ActiveRecord::Base
   belongs_to  :artist, class_name: "User"
   belongs_to  :ratingable, polymorphic: true
 
-  # def average_rating_of(object)
-  #   self.where(ratingable: object)
-  # end
-
   def self.average_rating_for(object)
     self.find_ratings_for(object)
     self.array_of_rating_scores
