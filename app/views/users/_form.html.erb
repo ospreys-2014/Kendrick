@@ -43,6 +43,10 @@
       <%= f.label(:artist, "I am an Artist") %>
     </div>
     <div class="field artist-form" style="display:none;">
+      <%= f.label :avatar %><br />
+      <%= f.file_field :avatar %>
+    </div>
+    <div class="field artist-form" style="display:none;">
       <%= f.label :bio %><br />
       <%= f.text_area :bio %>
     </div>

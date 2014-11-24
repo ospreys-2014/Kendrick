@@ -14,6 +14,17 @@ class User < ActiveRecord::Base
   validates_format_of :email_address, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   # validates :genres, presence: true, if: :artist
 
+  # This method associates the attribute ":avatar" with a file attachment
+  has_attached_file :avatar, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '300x300>'
+  }, :default_url => "/tat.jpg"
+
+  # Validate the attached image is image/jpg, image/png, etc
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+
   # ratings_as_user means that you are the user giving ratings
   # on reviews, comments, or artists
   has_many  :ratings_as_user, class_name: "Rating", foreign_key: :user_id
