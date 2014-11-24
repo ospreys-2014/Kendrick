@@ -205,6 +205,10 @@ ul.rig li img {
   margin: 0 0 10px;
 }
 
+div#rating-box {
+  margin-left: 40px;
+}
+
 div#user-review-box {
   margin-left: 40px;
 }
@@ -256,6 +260,3 @@ td.review-comment {
   display: block;
 }
 
-div#rating-box {
-margin-left: 40px;
-}
