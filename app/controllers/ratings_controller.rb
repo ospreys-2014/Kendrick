@@ -6,7 +6,8 @@ class RatingsController < ApplicationController
 
   def create
     @rating = Rating.create(rating_params)
-    
+    artist_id = params[:rating][:ratingable_id]
+    redirect_to user_path(artist_id)
   end
 
   def show
