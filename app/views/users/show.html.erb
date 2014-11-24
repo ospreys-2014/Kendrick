@@ -10,7 +10,12 @@
     <p> <b>Bio:</b> <%= @user.bio %></p>
     <p> <b>Email:</b> <%= @user.email_address %></p>
     <p> <b>Soundcloud:</b> <a href="<%= @user.soundcloud_profile %>"> Check Me Out!</a> </p>
+    <p> <b>Average rating:</b> <%= @average_rating %> </p>
   </ul>
+</div>
+
+<div id="rating-box">
+  <%= render partial: "ratings/form", locals: { user: @user, current_user: @current_user, rating: @rating } %>
 </div>
 
 <div id="user-review-box">
