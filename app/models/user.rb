@@ -60,8 +60,4 @@ class User < ActiveRecord::Base
     self.reviews_as_artist.count
   end
 
-  def average_rating
-
-  end
-
 end
