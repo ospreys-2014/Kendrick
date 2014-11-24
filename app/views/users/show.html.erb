@@ -1,6 +1,7 @@
-<h1>Artist Profile</h1>
+<h1 id="artist-tag">Artist Profile</h1>
 <div id="artist-show">
   <div class="profile-pic">
+    <%= image_tag @user.avatar.url %>
   </div>
   <ul>
     <p> <b>Username:</b> <%= @user.username %></p>
@@ -9,7 +10,12 @@
     <p> <b>Bio:</b> <%= @user.bio %></p>
     <p> <b>Email:</b> <%= @user.email_address %></p>
     <p> <b>Soundcloud:</b> <a href="<%= @user.soundcloud_profile %>"> Check Me Out!</a> </p>
+    <p> <b>Average rating:</b> <span class="rating"><%= @average_rating %></span> </p>
   </ul>
+</div>
+
+<div id="rating-box">
+  <%= render partial: "ratings/form", locals: { user: @user, current_user: @current_user, rating: @rating } %>
 </div>
 
 <div id="user-review-box">
