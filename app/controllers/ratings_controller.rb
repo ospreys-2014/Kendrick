@@ -1,4 +1,5 @@
 class RatingsController < ApplicationController
+  respond_to :html, :js, :json
 
   def new
     @rating = Rating.new
@@ -7,6 +8,16 @@ class RatingsController < ApplicationController
   def create
     @rating = Rating.create(rating_params)
     artist_id = params[:rating][:ratingable_id]
+    @average_rating = Rating.average_rating_for(User.find(artist_id))
+
+    # respond_to do |format|
+
+    #   format.html { redirect_to user_path(artist_id) }
+    #   format.json { render json: @average_rating }
+
+    # end
+
+
     redirect_to user_path(artist_id)
   end
 
