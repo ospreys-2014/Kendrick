@@ -27,7 +27,7 @@ Genre.create(name:"Classical",image_url:"http://stuffwhitepeoplelike.files.wordp
 Genre.create(name:"50's",image_url:"http://therecordingrevolution.com/wordpress/wp-content/uploads/2013/09/frank-sinatra-4de018e8e403b.jpg")
 # Adding 2nd round batch of genres (Sunday 11/23/14)
 Genre.create(name:"Pop",image_url:"http://assets4.bigthink.com/system/idea_thumbnails/51363/headline/pop_music.jpg?1372097715")
-Genre.create(name:"Opera",image_url:"https://avatars0.githubusercontent.com/u/8148176?v=3&s=400")
+Genre.create(name:"Opera",image_url:"https://scontent-b-atl.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/1474422_10100237555598699_377043902_n.jpg?oh=f3d5cd59aed83a71ed40d24bdf651658&oe=551BC17C")
 Genre.create(name:"R&B/Soul",image_url:"http://2.bp.blogspot.com/-7DQh6SMh5U0/UKn82-gBppI/AAAAAAABQPU/ml_peind-Xo/s640/soul_blue-1.jpg")
 Genre.create(name:"K-Pop",image_url:"http://www.iwantcovers.com/wp-content/uploads/2012/01/SNSD2.jpg")
 Genre.create(name:"Blues",image_url:"http://www.thejazzresource.com/images/bluesguitar.jpg")

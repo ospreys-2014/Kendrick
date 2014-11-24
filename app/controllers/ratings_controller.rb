@@ -1,4 +1,5 @@
 class RatingsController < ApplicationController
+
   respond_to :html, :js, :json
 
   def new
@@ -31,3 +32,4 @@ class RatingsController < ApplicationController
     params.require(:rating).permit(:user_id, :rating, :ratingable_id, :ratingable_type)
   end
 end
+
