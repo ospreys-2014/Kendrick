@@ -22,21 +22,9 @@
         <li id="login"><a id="signin-link" href="/signin">Login</a></li>
       <% end %>
     </ul>
-    <form class="navbar-form navbar-left">
-
-    </form>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-        <ul class="dropdown-menu">
-          <li><a href="/genres/jazz">Jazz</a></li>
-          <li><a href="/genres/hip-hop">Hip-Hop</a></li>
-          <li><a href="/genres/classical">Classical</a></li>
-          <li><a href="/genres/50s">50's</a></li>
-        </ul>
-      </li>
-    </ul>
   </div>
 </div>
+
     <% if flash[:notice] %>
       <center><%= flash[:notice] %></center>
     <% end %>
