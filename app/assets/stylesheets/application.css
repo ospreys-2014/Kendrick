@@ -247,4 +247,6 @@ td.review-comment {
   display: block;
 }
 
-
+div#rating-box {
+margin-left: 40px;
+}
