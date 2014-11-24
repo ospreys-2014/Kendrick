@@ -15,7 +15,7 @@ class Rating < ActiveRecord::Base
   def self.average_rating_for(object)
     self.find_ratings_for(object)
     self.array_of_rating_scores
-    self.average
+    self.average.round(1)
   end
 
   def self.find_ratings_for(object)
@@ -31,7 +31,7 @@ class Rating < ActiveRecord::Base
   end
 
   def self.average
-    array_of_rating_scores.reduce(:+) / array_of_rating_scores.count
+    array_of_rating_scores.reduce(:+).to_f / array_of_rating_scores.count.to_f
   end
 
 end
