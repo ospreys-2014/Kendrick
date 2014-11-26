@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
             format: { with: /https:\/\/soundcloud\.com\/.*?/ix }
   validates :email_address, presence: true
   validates_format_of :email_address, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+  # Again, don't leave commented out code in master
   # validates :genres, presence: true, if: :artist
 
   # This method associates the attribute ":avatar" with a file attachment
@@ -25,6 +26,10 @@ class User < ActiveRecord::Base
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
+  # The comments on the below associations are *not* good way to
+  # communicate the meaning of your code. It demonstrates a need to
+  # create a better or clearer lexicon for your custom associations
+  # (e.g. `:given_rating`, `:received_rating`).
 
   # ratings_as_user means that you are the user giving ratings
   # on reviews, comments, or artists
@@ -52,6 +57,7 @@ class User < ActiveRecord::Base
   end
 
   def reviews
+    # You don't seem to be using this method anywhere. Did it have a purpose?
     reviews_as_reviewer + reviews_as_artist
   end
 
@@ -59,6 +65,7 @@ class User < ActiveRecord::Base
   def assign_genre(genres)
     if self.artist
       genres.each do |genre|
+        # Good use of the AR association#create method
         self.artist_genres.create(genre_id: genre[1])
       end
     end

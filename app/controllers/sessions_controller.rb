@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "Signed in successfully."
       redirect_to genres_path
     else
+      # Error handling on user sign-in == awesome.
       flash[:notice] = "Sorry, those credentials are incorrect."
       redirect_to signin_path
     end

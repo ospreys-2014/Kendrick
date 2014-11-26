@@ -10,7 +10,7 @@ class RatingsController < ApplicationController
     @rating = Rating.create(rating_params)
     artist_id = params[:rating][:ratingable_id]
     @average_rating = Rating.average_rating_for(User.find(artist_id))
-
+    # Don't leave commented code in master.
     # respond_to do |format|
 
     #   format.html { redirect_to user_path(artist_id) }

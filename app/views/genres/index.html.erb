@@ -1,17 +1,18 @@
 <!-- Display the genres... would like to display in a pretty grid format -->
 
 <% if flash[:notice] %>
+  <%# Leave alignment to your CSS. Do not use the center tag. %>
   <center><%= flash[:notice] %></center>
   <% flash[:notice] = nil %>
 <% end %>
 
 <ul class="rig columns-3">
-<% @genres.each do |genre| %>
-  <%= link_to genre_path(genre, genre.name) do %>
-      <li>
-      <h2><center><%= genre.name %></center></h2>
-      <img src = "<%= genre.image_url %>">
-      </li>
+  <% @genres.each do |genre| %>
+    <%= link_to genre_path(genre, genre.name) do %>
+        <li>
+          <h2><center><%= genre.name %></center></h2>
+          <img src = "<%= genre.image_url %>">
+        </li>
+    <% end %>
   <% end %>
-<% end %>
 </ul>

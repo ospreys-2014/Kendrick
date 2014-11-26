@@ -55,6 +55,10 @@
       <%= f.text_field :soundcloud_profile %><br />
     </div>
     <div class="field artist-form" style="display:none;">
+    <%# Instead of listing each of your genres in this way, which is
+        painstaking, iterate through the genres in the database, as
+        provided from the controller.
+    %>
     Pick your genres:<br />
       <%= check_box_tag("user[genres][Jazz]", 1, false ) %>
       <%= f.label(:genres, "Jazz") %>
