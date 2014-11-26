@@ -1,5 +1,6 @@
 <h1 id="review-tag">Edit review</h1>
 
+<%# Place your form inside your div, not the other way around. %>
 <%= form_for :review, url: review_path(@review), method: :patch do |f| %>
  <div class="review-box">
     <%= f.label :review %><br>

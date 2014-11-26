@@ -1,5 +1,6 @@
 require 'rails_helper'
-
+# Not sure why this isn't in the existing User spec inside of a
+# `context "user authentication"` block.
 describe User do
 
   describe "passwords" do

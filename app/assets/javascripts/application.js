@@ -13,6 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+// Your js doesn't go in the application.js file.
+// Application.js is just a manifest that determins the order that OTHER files should be added.
+
 $(document).ready(function() {
   // toggles the artist sub form
   $( '#check-box' ).click(function(event){

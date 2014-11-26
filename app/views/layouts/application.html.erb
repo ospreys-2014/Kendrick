@@ -9,29 +9,32 @@
 </head>
 <body>
 
-<div class="navbar navbar-inverse">
-  <div class="navbar-header">
-    <a class="navbar-brand" href="/">LiveHub</a>
+  <div class="navbar navbar-inverse">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">LiveHub</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-inverse-collapse">
+      <ul class="nav navbar-nav">
+        <% if session[:user_id] %>
+          <li><a href="/genres">Genres</a></li>
+          <li><a href="/logout">LogOut</a></li>
+        <% else %>
+          <li id="signup"><a id="signup-link" href="/users/new">SignUp</a></li>
+          <li id="login"><a id="signin-link" href="/signin">Login</a></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
-  <div class="navbar-collapse collapse navbar-inverse-collapse">
-    <ul class="nav navbar-nav">
-      <% if session[:user_id] %>
-        <li><a href="/genres">Genres</a></li>
-        <li><a href="/logout">LogOut</a></li>
-      <% else %>
-        <li id="signup"><a id="signup-link" href="/users/new">SignUp</a></li>
-        <li id="login"><a id="signin-link" href="/signin">Login</a></li>
-      <% end %>
-    </ul>
-  </div>
-</div>
-
+    <%# This below is a partial now %>
     <% if flash[:notice] %>
       <center><%= flash[:notice] %></center>
     <% end %>
+
     <div class="content">
       <%= yield %>
       <center><div id="signup-partial" style="display:none;">
+        <%# Create your User.new in the controller and pass it in.%>
+        <%# NOT in the view. %>
         <%= render partial: 'users/form', locals: {user: @user = User.new()}, layout: false %>
       </div></center>
       <center><div id="login-partial" style="display:none;">

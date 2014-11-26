@@ -14,6 +14,8 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    # Again, permit the associations and you won't need these
+    # next two lines of code.
     @review.artist = User.find(params[:review][:artist_id])
     @review.reviewer = User.find(params[:review][:reviewer_id])
     @review.save
@@ -25,6 +27,7 @@ class ReviewsController < ApplicationController
     @user = @review.artist
 
     if @review.update(review_params)
+      # Please use a named route here (e.g. user_path(@user))
       redirect_to "/users/#{@user.id}"
     else
       render 'edit'
@@ -33,7 +36,6 @@ class ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
-
   end
 
   def destroy
@@ -44,8 +46,11 @@ class ReviewsController < ApplicationController
       format.js do
         render nothing: true
       end
+      # Why format.any over format.html?
       format.any do
-      redirect_to "/users/#{@user.id}"
+        # Good indentation practices help avoid issues like unclosed blocks.
+        redirect_to "/users/#{@user.id}"
+      end
     end
   end
 

@@ -1,6 +1,7 @@
 class Rating < ActiveRecord::Base
-
+  # Exploring custom validations?? Get it!
   validates_with  ArtistValidator
+  # Don't leave commented out code in master.
   # validates :helpful, presence: true
 
   belongs_to  :user
@@ -20,6 +21,7 @@ class Rating < ActiveRecord::Base
   private
 
   def self.array_of_rating_scores
+    # Woohoo, great use of map!
     @ratings_objects.map do |rating_object|
       rating_object.rating
     end
