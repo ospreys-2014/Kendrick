@@ -1,22 +1,8 @@
 <img src="https://travis-ci.org/ospreys-2014/Kendrick.svg?branch=master">
 
-Kendrick
-========
-Weekend:
-Ali:
--login
--incorporate genre selections for artists
--tests
+##LiveHub
 
-Steph:
--finish reviews
--nested commenting
--tests
+LiveHub is a social medium for artists, live musicians, and performers. Users can rate and review artists based on their past live performances.
 
-James:
--CSS
--tests
-
-Rob:
--finish associations
--tests
+• Built with Ruby on Rails, Bootstrap, Paperclip
+• Tested with RSpec and Travis CI
