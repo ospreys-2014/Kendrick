@@ -35,13 +35,14 @@ gem 'pry'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
+gem "faker", "~> 1.4.3"
+
 # Rspec enviornment
 group :development, :test do
   gem 'simplecov'
   gem 'shoulda-matchers'
   gem "rspec-rails", "~> 3.1.0"
   gem "factory_girl_rails", "~> 4.4.1"
-  gem "faker", "~> 1.4.3"
 end
 
 group :test do
@@ -51,12 +52,16 @@ group :test do
  gem "selenium-webdriver", "~> 2.43.0"
 end
 
+
 gem 'travis-lint'
 
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk'
 # Use unicorn as the app server
 gem 'unicorn'
+
+#Rack Timeout generates a stacktrac in the logs for debugging
+gem 'rack-timeout'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
