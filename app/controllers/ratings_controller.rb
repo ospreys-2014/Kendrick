@@ -7,7 +7,11 @@ class RatingsController < ApplicationController
   end
 
   def create
+    p "*"*300
     @rating = Rating.create(rating_params)
+    p "*"*200
+    p params[:rating][:ratingable_id]
+    p "*"*200
     artist_id = params[:rating][:ratingable_id]
     @average_rating = Rating.average_rating_for(User.find(artist_id))
 
