@@ -26,6 +26,8 @@ class Rating < ActiveRecord::Base
   end
 
   def self.average
+    p "*"*100
+    p array_of_rating_scores
     array_of_rating_scores.reduce(:+).to_f / array_of_rating_scores.count.to_f
   end
 
