@@ -4,7 +4,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @current_user = User.find(session[:user_id])
     @rating = Rating.new
     @average_rating = Rating.average_rating_for(@user)
   end

@@ -15,7 +15,9 @@
 </div>
 
 <div id="rating-box">
-  <%= render partial: "ratings/form", locals: { user: @user, current_user: @current_user, rating: @rating } %>
+  <% if @current_user %>
+    <%= render partial: "ratings/form", locals: { user: @user, current_user: @current_user, rating: @rating } %>
+  <% end %>
 </div>
 
 <div id="user-review-box">
