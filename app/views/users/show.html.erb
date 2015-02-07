@@ -15,7 +15,7 @@
 </div>
 
 <div id="rating-box">
-  <% if @current_user %>
+  <% if session[:user_id] %>
     <%= render partial: "ratings/form", locals: { user: @user, current_user: @current_user, rating: @rating } %>
   <% end %>
 </div>
