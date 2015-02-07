@@ -18,7 +18,6 @@ class RatingsController < ApplicationController
 
     # end
 
-
     redirect_to user_path(artist_id)
   end
 

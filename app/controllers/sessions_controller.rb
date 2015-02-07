@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     end
   end
 
+  # Consider removal
   def new
   end
 

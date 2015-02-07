@@ -46,6 +46,7 @@ class ReviewsController < ApplicationController
       end
       format.any do
       redirect_to "/users/#{@user.id}"
+      end
     end
   end
 

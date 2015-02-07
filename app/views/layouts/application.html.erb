@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kendrick</title>
+  <title>LiveHub</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js' %>
@@ -29,14 +29,14 @@
     <% if flash[:notice] %>
       <center><%= flash[:notice] %></center>
     <% end %>
-    <div class="content">
-      <%= yield %>
       <center><div id="signup-partial" style="display:none;">
         <%= render partial: 'users/form', locals: {user: @user = User.new()}, layout: false %>
       </div></center>
       <center><div id="login-partial" style="display:none;">
         <%= render partial: 'sessions/form'%>
       </div></center>
+    <div class="content">
+      <%= yield %>
     </div>
     <div class="background-image"></div>
 </body>
